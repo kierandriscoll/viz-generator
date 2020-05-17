@@ -22,7 +22,7 @@
       <span class="logo"></span>
       <nav class="navbar navbar-static-top" role="navigation">
         <span style="display:none;">
-          <i class="fa fa-bars"></i>
+          <i class="fas fa-bars"></i>
         </span>
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
@@ -60,20 +60,27 @@
   </script>
   <script>	
   $('.sidebar-menu').append('<input class="input-sm form-control" type="file" id="inputFileId" name="inputFileName" onchange="importFile()">');
-  $('#' +inputFileId).selectize(); // Optional convert to selectize.js
 	  
   function importFile() {      
-      var file = document.querySelector('#inputFileId').files[0]; 
-	  var reader = new FileReader();
+    var file = document.querySelector('#inputFileId').files[0]; 
+    var reader = new FileReader();
 	  
-	  reader.onload = function fileReadCompleted(){
-	  // Data must be used inside this function
-          dataset = d3.csvParse(reader.result, d3.autoType);
-          console.log(dataset);
-      };
-      
-      reader.readAsText(file);
-    }	  
+    reader.onload = function fileReadCompleted(){
+      // Data must be used inside this function
+      dataset = d3.csvParse(reader.result, d3.autoType);
+      console.log(dataset);
+    };
+    reader.readAsText(file);
+  }
+  
+  $('#Treemap-row0-box0').append('<textarea id="textareaId" width="500px" height="250px"></textarea><input type="button" onclick="readText()" value="Submit"/>')
+  function readText() {
+    var data = $('#textareaId').val();
+  
+    // Convert tsv to json using D3
+    dataset = d3.tsvParse(data, d3.autoType); 
+    console.log(dataset);	  
+  }	  
   </script>	
   <script src="lib/viz-generator.js"></script>
 </body>
