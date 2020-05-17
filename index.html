@@ -53,12 +53,12 @@
     dashboardHeader(title = "Viz Generator", disable = false)
     dashboardSidebar(disable = false, collapsed = false)
     sidebarMenu()
-      menuItem("Section 1", tabName = "Treemap")
+      menuItem("Treemap", tabName = "Treemap")
       menuItem("Section 2", tabName = "section2")
       menuItem("Section 3", tabName = "section3")
     selectInput("INID-A", "Choose:", ["A","B","C","D","E"])
-    fluidRow("section1", grid = [[6, 6]])
-    box("section1-row0-box0", solidHeader = true, status = "warning", title = "fddgfgf", height = "200px")
+    fluidRow("Treemap", grid = [[6, 6]])
+    box("Treemap-row0-box0", solidHeader = true, status = "warning", title = "fddgfgf", height = "200px")
   </script>
   <script src="lib/viz-generator.js"></script>
 </body>
