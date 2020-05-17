@@ -37,13 +37,13 @@
 	
     <aside id="sidebarCollapsed" class="main-sidebar" data-collapsed="false">
       <section id="sidebarItemExpanded" class="sidebar">
-	 	  </section>
+      </section>
     </aside>
     
-	<div class="content-wrapper">
+    <div class="content-wrapper">
       <section class="content">
-	    <div class="tab-content"></div>
-	  </section>
+	<div class="tab-content"></div>
+      </section>
     </div>
   
   </div>
@@ -60,6 +60,23 @@
     fluidRow("Treemap", grid = [[6, 6]])
     box("Treemap-row0-box0", solidHeader = true, status = "warning", title = "Example")
   </script>
+  <script>	
+  $('.sidebar-menu').append('<input class="input-sm form-control" type="file" id="inputFileId" name="inputFileName" onchange="importFile()">');
+  $('#' +inputFileId).selectize(); // Optional convert to selectize.js
+	  
+  function importFile() {      
+      var file = document.querySelector('#inputFileId').files[0]; 
+	  var reader = new FileReader();
+	  
+	  reader.onload = function fileReadCompleted(){
+	  // Data must be used inside this function
+          dataset = d3.csvParse(reader.result, d3.autoType);
+          console.log(dataset);
+      };
+      
+      reader.readAsText(file);
+    }	  
+  </script>	
   <script src="lib/viz-generator.js"></script>
 </body>
 </html>
