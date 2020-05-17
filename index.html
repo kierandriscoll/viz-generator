@@ -1,0 +1,66 @@
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.2.0/css/AdminLTE.min.css" rel="stylesheet" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.2.0/css/skins/_all-skins.min.css" rel="stylesheet" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.2.0/js/app.min.js"></script>
+ <link href="lib/shinydashboard.css" rel="stylesheet" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" rel="stylesheet" />
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+ <link rel="stylesheet" href="lib/viz-generator.css" />	 
+ <style></style>
+</head>
+
+<body class="skin-blue" style="min-height: 611px;">
+  <div class="wrapper">
+    <header class="main-header">
+      <span class="logo"></span>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <span style="display:none;">
+          <i class="fa fa-bars"></i>
+        </span>
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav"></ul>
+        </div>
+      </nav>
+    </header>
+	
+    <aside id="sidebarCollapsed" class="main-sidebar" data-collapsed="false">
+      <section id="sidebarItemExpanded" class="sidebar">
+	 	  </section>
+    </aside>
+    
+	<div class="content-wrapper">
+      <section class="content">
+	    <div class="tab-content"></div>
+	  </section>
+    </div>
+  
+  </div>
+  <script src="lib/shinylike.js"></script>
+  <script> // Specify Dashboard structure
+    changeColors(skinColor = "red", sidebar_background =  null, body_background = "white")
+    dashboardHeader(title = "Viz Generator", disable = false)
+    dashboardSidebar(disable = false, collapsed = false)
+    sidebarMenu()
+      menuItem("Section 1", tabName = "Treemap")
+      menuItem("Section 2", tabName = "section2")
+      menuItem("Section 3", tabName = "section3")
+    selectInput("INID-A", "Choose:", ["A","B","C","D","E"])
+    fluidRow("section1", grid = [[6, 6]])
+    box("section1-row0-box0", solidHeader = true, status = "warning", title = "fddgfgf", height = "200px")
+  </script>
+  <script src="lib/viz-generator.js"></script>
+</body>
+</html>
