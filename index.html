@@ -2,7 +2,8 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet" />
+ <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet" /> -->
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,7 +23,7 @@
       <span class="logo"></span>
       <nav class="navbar navbar-static-top" role="navigation">
         <span style="display:none;">
-          <i class="fas fa-bars"></i>
+          <i class="fa fa-bars"></i>
         </span>
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
@@ -47,11 +48,11 @@
   </div>
   <script src="lib/shinylike.js"></script>
   <script> // Specify Dashboard structure
-    changeColors(skinColor = "red", sidebar_background =  null, body_background = "white")
+    changeColors(skinColor = "red", sidebar_background =  null, body_background = "#f2f2f2")
     dashboardHeader(title = "Viz Generator", disable = false)
     dashboardSidebar(disable = false, collapsed = false)
     sidebarMenu()
-      menuItem("Treemap", tabName = "Treemap")
+      menuItem("Treemap", tabName = "Treemap", activity = "active")
       menuItem("Section 2", tabName = "section2")
       menuItem("Section 3", tabName = "section3")
     selectInput("INID-A", "Choose:", ["A","B","C","D","E"])
